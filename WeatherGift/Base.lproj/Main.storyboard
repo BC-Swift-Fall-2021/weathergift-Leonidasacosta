@@ -31,6 +31,18 @@
                                 </constraints>
                                 <items>
                                     <barButtonItem title="About" id="sCh-sz-HKU"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="RAt-Px-8wC"/>
+                                    <barButtonItem style="plain" id="zgQ-j1-E5n">
+                                        <pageControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="VUP-Kb-eXt">
+                                            <rect key="frame" x="73" y="9" width="193" height="26"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="pageIndicatorTintColor" systemColor="systemTealColor"/>
+                                            <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="pageControlTapped:" destination="b0Y-lQ-heY" eventType="valueChanged" id="Slp-4P-aA1"/>
+                                            </connections>
+                                        </pageControl>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="s23-vg-1u0"/>
                                     <barButtonItem image="list.bullet" catalog="system" id="Jyh-jg-Go9">
                                         <connections>
@@ -96,6 +108,7 @@
                     <connections>
                         <outlet property="dateLabel" destination="3Cl-0a-jxc" id="yXX-iT-Xgg"/>
                         <outlet property="imageView" destination="Zfm-cl-7Un" id="2xm-uc-bAq"/>
+                        <outlet property="pageControl" destination="VUP-Kb-eXt" id="UfG-41-bOF"/>
                         <outlet property="placeLabel" destination="VfJ-Ht-AQS" id="v6a-qH-Q6F"/>
                         <outlet property="summaryLabel" destination="Pdn-co-LxE" id="Lcu-mN-gbh"/>
                         <outlet property="temperatureLabel" destination="XbS-da-kWY" id="1Vp-2U-z4y"/>
