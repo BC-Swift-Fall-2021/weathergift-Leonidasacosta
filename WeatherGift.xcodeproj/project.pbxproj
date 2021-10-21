@@ -19,6 +19,7 @@
 		639677D5270D324E0031C917 /* APIkeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639677D4270D324E0031C917 /* APIkeys.swift */; };
 		639677DB270D41E80031C917 /* LocationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639677DA270D41E80031C917 /* LocationDetailViewController.swift */; };
 		63AB18AC2711210400D9ECEB /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AB18AB2711210400D9ECEB /* PageViewController.swift */; };
+		63D882602721F53100B04159 /* DailyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D8825F2721F53100B04159 /* DailyTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		639677D4270D324E0031C917 /* APIkeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIkeys.swift; sourceTree = "<group>"; };
 		639677DA270D41E80031C917 /* LocationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailViewController.swift; sourceTree = "<group>"; };
 		63AB18AB2711210400D9ECEB /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		63D8825F2721F53100B04159 /* DailyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTableViewCell.swift; sourceTree = "<group>"; };
 		942B3627CC503E8CC4FB1358 /* Pods-WeatherGift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherGift.release.xcconfig"; path = "Target Support Files/Pods-WeatherGift/Pods-WeatherGift.release.xcconfig"; sourceTree = "<group>"; };
 		E0C3BF159D28FB1E40B44B2F /* libPods-WeatherGift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeatherGift.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -97,6 +99,7 @@
 				63AB18AB2711210400D9ECEB /* PageViewController.swift */,
 				639677DA270D41E80031C917 /* LocationDetailViewController.swift */,
 				635922FD270C18A4008447B6 /* LocationListViewController.swift */,
+				63D8825F2721F53100B04159 /* DailyTableViewCell.swift */,
 				635922FF270C18A4008447B6 /* Main.storyboard */,
 				63592302270C18A6008447B6 /* Assets.xcassets */,
 				63592304270C18A7008447B6 /* LaunchScreen.storyboard */,
@@ -221,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63D882602721F53100B04159 /* DailyTableViewCell.swift in Sources */,
 				635922FE270C18A4008447B6 /* LocationListViewController.swift in Sources */,
 				6318935527138ECB009AD1D3 /* WeatherDetail.swift in Sources */,
 				63AB18AC2711210400D9ECEB /* PageViewController.swift in Sources */,
