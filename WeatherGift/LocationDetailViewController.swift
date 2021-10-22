@@ -136,38 +136,45 @@ extension LocationDetailViewController: UICollectionViewDataSource, UICollection
         hourlyCell.hourlyWeather = weatherDetail.hourlyWeatherData[indexPath.row]
         return hourlyCell
     }
-    
-
-    
-    
 }
 extension LocationDetailViewController: CLLocationManagerDelegate {
-    
     func getLocation() {
         // Creating a CLLocationManager will automatically check authorization
         locationManager = CLLocationManager()
         locationManager.delegate = self
     }
     
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        print("👮🏾‍♀️👮🏾‍♀️ Checking authentication status.")
-        handleAuthenticalStatus(status: status)
-    }
-    
-    func handleAuthenticalStatus(status: CLAuthorizationStatus) {
+    func handleAuthorizationStatus(status: CLAuthorizationStatus) {
         switch status {
         case .notDetermined:
             locationManager.requestWhenInUseAuthorization()
         case .restricted:
-            self.oneButtonAlert(title: "Location services deined", message: "It may be that parental controls are restricting location use in this app.")
+            self.oneButtonAlert(title: "Location services denied", message: "It may be that parental controls are restricting location use in this app.")
         case .denied:
-            // TODO: Handle aleart w/ability to change
-            break
+            showAlertToPrivacySettings(title: "User has not authorized location services", message: "Select 'Settings' below to enable device settings and enable location services for this app.")
         case .authorizedAlways, .authorizedWhenInUse:
             locationManager.requestLocation()
         @unknown default :
-            print("😡😡 DEVELOPER ALERT: Unknown case of status in \(status)")
+            print("😡😡 DEVELOPER ALERT: Unknown case of status in handleAuthorizationStatus\(status)")
         }
+    }
+    
+    func showAlertToPrivacySettings(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else {
+            print("Something went wrong getting the UIApplication.openSettingsURLString")
+            return
+        }
+        let settingsAction = UIAlertAction(title: "Settings", style: .default) { (_) in UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(settingsAction)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        print("👮🏾‍♀️👮🏾‍♀️ Checking authentication status")
+        handleAuthorizationStatus(status: status)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
