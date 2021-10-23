@@ -31,11 +31,15 @@
                                     <constraint firstAttribute="height" constant="44" id="pGW-U0-1Gr"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem title="About" id="sCh-sz-HKU"/>
+                                    <barButtonItem title="About" id="sCh-sz-HKU">
+                                        <connections>
+                                            <segue destination="1FV-4d-Z8Q" kind="presentation" id="exa-li-JCj"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="RAt-Px-8wC"/>
                                     <barButtonItem style="plain" id="zgQ-j1-E5n">
                                         <pageControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="VUP-Kb-eXt">
-                                            <rect key="frame" x="73" y="9" width="193" height="26"/>
+                                            <rect key="frame" x="73" y="9" width="194" height="26"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="pageIndicatorTintColor" systemColor="systemTealColor"/>
                                             <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -47,7 +51,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="s23-vg-1u0"/>
                                     <barButtonItem image="list.bullet" catalog="system" id="Jyh-jg-Go9">
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="BC0-qy-onZ"/>
+                                            <segue destination="BYZ-38-t0r" kind="presentation" identifier="ShowList" modalPresentationStyle="fullScreen" id="BC0-qy-onZ"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -233,6 +237,79 @@
             </objects>
             <point key="canvasLocation" x="-791.25" y="96.25"/>
         </scene>
+        <!--About View Controller-->
+        <scene sceneID="GTe-un-wko">
+            <objects>
+                <viewController id="1FV-4d-Z8Q" customClass="AboutViewController" customModule="WeatherGift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="W6Z-MQ-n4F">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E7M-iF-R7h">
+                                <rect key="frame" x="0.0" y="416" width="320" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="WaX-5d-ANA"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="Done" id="zT2-k8-WaM">
+                                        <connections>
+                                            <action selector="doneButtonPressed:" destination="1FV-4d-Z8Q" id="qRh-vs-2bj"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eAO-P2-HVl">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WeatherGift" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0w-ZM-0VY">
+                                        <rect key="frame" x="26" y="8" width="268" height="88"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="64"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="clear-day" translatesAutoresizingMaskIntoConstraints="NO" id="SP2-NW-D0y">
+                                        <rect key="frame" x="8" y="104" width="304" height="140"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byH-Ug-zUY">
+                                        <rect key="frame" x="8" y="252" width="304" height="68"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                        <string key="text">Made with Love for You by
+Chichi</string>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="powered_by_openweather" translatesAutoresizingMaskIntoConstraints="NO" id="IBp-Lj-kVj">
+                                        <rect key="frame" x="8" y="328" width="148" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="powered_by_google_on_white" translatesAutoresizingMaskIntoConstraints="NO" id="KFu-7c-Tdw">
+                                        <rect key="frame" x="164" y="328" width="148" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="NbR-ho-2vS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="E7M-iF-R7h" firstAttribute="bottom" secondItem="NbR-ho-2vS" secondAttribute="bottom" id="1z0-A5-1ZI"/>
+                            <constraint firstItem="eAO-P2-HVl" firstAttribute="leading" secondItem="NbR-ho-2vS" secondAttribute="leading" id="JiP-ZO-ax3"/>
+                            <constraint firstItem="NbR-ho-2vS" firstAttribute="trailing" secondItem="E7M-iF-R7h" secondAttribute="trailing" id="UaZ-vF-gop"/>
+                            <constraint firstItem="E7M-iF-R7h" firstAttribute="top" secondItem="eAO-P2-HVl" secondAttribute="bottom" id="aaC-xA-zeH"/>
+                            <constraint firstItem="NbR-ho-2vS" firstAttribute="trailing" secondItem="eAO-P2-HVl" secondAttribute="trailing" id="fPD-lq-cIh"/>
+                            <constraint firstItem="eAO-P2-HVl" firstAttribute="top" secondItem="NbR-ho-2vS" secondAttribute="top" id="gfY-sb-DyO"/>
+                            <constraint firstItem="E7M-iF-R7h" firstAttribute="leading" secondItem="W6Z-MQ-n4F" secondAttribute="leading" id="xL2-qh-Gjd"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2LT-Qo-dbw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-791" y="938"/>
+        </scene>
         <!--Location List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -315,6 +392,8 @@
         <image name="clear-day" width="3024" height="4032"/>
         <image name="cloud" catalog="system" width="128" height="88"/>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
+        <image name="powered_by_google_on_white" width="144" height="18"/>
+        <image name="powered_by_openweather" width="468" height="228"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
